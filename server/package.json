@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "mongodb": "^7.0.0"
+  },
+  "name": "byomkesh-bakshi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruchanimbalkar/Byomkesh-Bakshi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruchanimbalkar/Byomkesh-Bakshi/issues"
+  },
+  "homepage": "https://github.com/ruchanimbalkar/Byomkesh-Bakshi#readme"
+}
