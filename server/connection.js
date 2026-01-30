@@ -1,5 +1,6 @@
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
+import documents from "./data.js";
 
 dotenv.config();
 const uri = process.env.ATLAS_URL;
@@ -9,13 +10,10 @@ const client = new MongoClient(uri);
 
 async function run() {
   try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log(
-      "Pinged your deployment. You successfully connected to MongoDB!"
-    );
+    const database = client.db("byomkeshbakshi_dd");
+    const episodes = database.collection("episodes");
+    const result = await episodes.insertMany(documents);
+    console.log(`${result.insertedCount} documents were inserted!`);
   } finally {
     // Ensures that the client will close when you finish/error
     await client.close();
