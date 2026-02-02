@@ -7,7 +7,7 @@ const app = express();
 app.get("/episodes", async (request, response, next) => {
   try {
     const results = await db.collection("episodes").find({}).toArray();
-    console.log("results", results);
+    // console.log("results : ", results);
     response.status(200).json(results);
   } catch (error) {
     next(error);
