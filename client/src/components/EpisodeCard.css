@@ -14,12 +14,13 @@ a {
   color: inherit;
 }
 
-.hidden {
+.tooltiptext {
   background-color: grey;
   padding: 0.3rem;
-  display: none;
+  visibility: hidden;
+  z-index: 1;
 }
 
-.episode-card:hover + .hidden {
-  display: block;
+.tooltip:hover + .tooltiptext {
+  visibility: visible;
 }

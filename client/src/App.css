@@ -4,3 +4,11 @@
   padding: 2rem;
   text-align: center;
 }
+
+.home-page-div p {
+  text-align: left;
+}
+
+.image-p {
+  text-align: center;
+}

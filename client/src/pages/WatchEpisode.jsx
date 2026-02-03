@@ -1,17 +1,22 @@
 //import useParams and use it to access the URL parameter called episodeNumber
 import { useParams } from "react-router-dom";
+//import components
+import Card from "../components/Card.jsx";
 import Video from "../components/Video.jsx";
 export default function WatchEpisode({ episodes }) {
   //get the episode number from the URL parameter
-  const episodeNumber = useParams().episodeNo;
-  console.log("episodeNumber : ", episodeNumber);
+  const episodeName = useParams().episodeTitle;
+  console.log("episodeName : ", episodeName);
   let episodeDetails = episodes.find(
-    (episode) => episode.episodeNo == episodeNumber
+    (episode) => episode.episodeTitle == episodeName
   );
   console.log("episodeDetails", episodeDetails);
+
   return (
     <main>
-      <Video videoLink={episodeDetails.youTubeEmbedLink} />
+      <Card episode={episodeDetails}>
+        <Video videoLink={episodeDetails.youTubeEmbedLink} />
+      </Card>
     </main>
   );
 }

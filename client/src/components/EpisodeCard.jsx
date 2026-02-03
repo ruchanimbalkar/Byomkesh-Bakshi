@@ -2,20 +2,15 @@
 import "./EpisodeCard.css";
 //import Link from react-router-dom
 import { Link } from "react-router-dom";
+//import components
+import Card from "../components/Card.jsx";
 export default function EpisodeCard({ episode }) {
-  let descriptionP = episode.description || "Description not available.";
   return (
-    <Link to={`/episode/${episode.episodeNo}`}>
-      <div className="episode-card">
-        <h3>
-          {" "}
-          Season {episode.season} | Episode {episode.episodeNo}{" "}
-        </h3>
-        <p>{descriptionP}</p>
+    <Link to={`/episode/${episode.episodeTitle}`}>
+      <div className="tooltip episode-card">
+        <Card episode={episode} />
       </div>
-      <div className="hidden">
-        <p>Click to watch this episode </p>
-      </div>
+      <span className="tooltiptext">Click to watch this episode</span>
     </Link>
   );
 }

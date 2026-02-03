@@ -79,7 +79,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About episodes={episodes} />} />
         <Route
-          path="/episode/:episodeNo"
+          path="/episode/:episodeTitle"
           element={<WatchEpisode episodes={episodes} />}
         />
       </Routes>
