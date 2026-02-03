@@ -1,9 +1,25 @@
 .episode-card {
   border: 0.1rem solid gray;
+  border-radius: 0.8rem;
   margin: 1rem;
   padding: 1rem;
 }
 
 .episode-card p {
   text-align: left;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hidden {
+  background-color: grey;
+  padding: 0.3rem;
+  display: none;
+}
+
+.episode-card:hover + .hidden {
+  display: block;
 }

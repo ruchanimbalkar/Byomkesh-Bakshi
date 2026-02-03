@@ -1,6 +1,5 @@
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
-import documents from "./data.js";
 dotenv.config();
 const uri = process.env.ATLAS_URL;
 
