@@ -1,7 +1,5 @@
 // pages/About.jsx
 import EpisodeCard from "../components/EpisodeCard.jsx";
-import Video from "../components/Video.jsx";
-import { useState, useEffect } from "react";
 
 export default function About({ episodes }) {
   return (
