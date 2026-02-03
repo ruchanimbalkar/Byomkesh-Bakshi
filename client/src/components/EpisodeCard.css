@@ -1,0 +1,9 @@
+.episode-card {
+  border: 0.1rem solid gray;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.episode-card p {
+  text-align: left;
+}
