@@ -19,10 +19,18 @@ function App() {
   const [lightMode, setLightMode] = useState(true);
   const handleChange = () => {
     setLightMode(!lightMode);
-    let mode = lightMode ? "day" : "night";
-    document.body.classList.remove("day");
-    document.body.classList.remove("night");
-    document.body.classList.add(mode);
+    if (lightMode === true) {
+      //remove night class
+      document.body.classList.remove("night");
+      //add day class
+      document.body.classList.add("day");
+    } else {
+      //lightMode is false
+      //remove day class
+      document.body.classList.remove("day");
+      //add night class
+      document.body.classList.add("night");
+    }
   };
   const getAllEpisodes = async () => {
     try {

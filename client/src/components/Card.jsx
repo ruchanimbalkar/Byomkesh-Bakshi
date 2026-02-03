@@ -7,8 +7,8 @@ export default function Card(props) {
         Season {props.episode.season} | Episode {props.episode.episodeNo}{" "}
       </h3>
       <h4>{props.episode.episodeTitle}</h4>
-      <p>{descriptionP}</p>
       {props.children}
+      <p>{descriptionP}</p>
     </>
   );
 }
