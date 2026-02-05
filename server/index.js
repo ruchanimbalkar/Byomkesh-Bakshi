@@ -17,7 +17,10 @@ app.get("/episodes", async (request, response, next) => {
 //Get all letters
 app.get("/letters", async (request, response, next) => {
   try {
-    const results = await db.collection("letters").find({}).toArray();
+    const results = await db
+      .collection("letters")
+      .find({ publish: true })
+      .toArray();
     // console.log("results : ", results);
     response.status(200).json(results);
   } catch (error) {
@@ -37,6 +40,7 @@ app.post("/add-fan-mail", async (req, res, next) => {
         title: title,
         body: body,
         author: author,
+        publish: false,
       });
       console.log(`${results.insertedId} inserted`);
       const inserted = await collection.findOne({ _id: results.insertedId });
