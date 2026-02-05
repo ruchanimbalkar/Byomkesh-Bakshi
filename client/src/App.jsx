@@ -2,6 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 //import pages
 import Home from "./pages/Home";
 import About from "./pages/About";
+import FanMail from "./pages/FanMail";
 import WatchEpisode from "./pages/WatchEpisode";
 //import react-switch and react-icons
 import Switch from "react-switch";
@@ -35,7 +36,7 @@ function App() {
   const getAllEpisodes = async () => {
     try {
       //Fetch data from API and wait for it to finish.Save the value returned by the api call in a variable named 'response'.
-      const response = await fetch("/api/episodes"); //Getting data from API takes time so we use the await keyword
+      const response = await fetch("/api/letters"); //Getting data from API takes time so we use the await keyword
       //Guard Clause Reference : https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
       if (!response.ok) {
         console.error(`Response status: ${response.status}`);
@@ -69,6 +70,9 @@ function App() {
               <li>
                 <Link to="/about">About</Link>
               </li>
+              <li>
+                <Link to="/fanmail">FanMail</Link>
+              </li>
             </ul>
           </nav>
         </div>
@@ -90,6 +94,7 @@ function App() {
           path="/episode/:episodeTitle"
           element={<WatchEpisode episodes={episodes} />}
         />
+        <Route path="/fanmail" element={<FanMail />} />
       </Routes>
     </>
   );
