@@ -28,8 +28,8 @@ app.get("/letters", async (request, response, next) => {
   }
 });
 
-//Add-fan-mail
-app.post("/add-fan-mail", async (req, res, next) => {
+//Add-one-memory
+app.post("/add-one-memory", async (req, res, next) => {
   const { title, body, author } = req.body;
   try {
     if (!title || !body || !author) {

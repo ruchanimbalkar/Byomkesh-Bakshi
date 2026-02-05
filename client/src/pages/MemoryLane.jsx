@@ -3,12 +3,17 @@ import { useState, useEffect } from "react";
 //import components
 import LetterCard from "../components/LetterCard.jsx";
 import Form from "../components/Form.jsx";
-export default function FanMail() {
+export default function MemoryLane() {
   const [letters, setLetters] = useState([]);
   const popover = (
     <div id="letter-popover" popover="auto">
       <Form />
-      <button commandfor="letter-form" command="hide-popover">
+      <button
+        id="x"
+        type="button"
+        commandfor="letter-popover"
+        command="hide-popover"
+      >
         Close
       </button>
     </div>
@@ -44,7 +49,7 @@ export default function FanMail() {
       <button
         className="popover-button"
         type="button"
-        commandfor="letter-form"
+        commandfor="letter-popover"
         command="toggle-popover"
       >
         Share your memory

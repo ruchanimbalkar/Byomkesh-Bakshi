@@ -2,7 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 //import pages
 import Home from "./pages/Home";
 import About from "./pages/About";
-import FanMail from "./pages/FanMail";
+import MemoryLane from "./pages/MemoryLane";
 import WatchEpisode from "./pages/WatchEpisode";
 //import react-switch and react-icons
 import Switch from "react-switch";
@@ -71,7 +71,7 @@ function App() {
                 <Link to="/about">About</Link>
               </li>
               <li>
-                <Link to="/fanmail">FanMail</Link>
+                <Link to="/memorylane">MemoryLane</Link>
               </li>
             </ul>
           </nav>
@@ -94,7 +94,7 @@ function App() {
           path="/episode/:episodeTitle"
           element={<WatchEpisode episodes={episodes} />}
         />
-        <Route path="/fanmail" element={<FanMail />} />
+        <Route path="/memorylane" element={<MemoryLane />} />
       </Routes>
     </>
   );

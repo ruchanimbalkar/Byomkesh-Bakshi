@@ -1,3 +1,13 @@
+.letter-card {
+  font-family: "Vollkorn", serif;
+  font-style: italic;
+  background-color: grey;
+  border: 0.4rem double darkgray;
+  border-radius: 0.7rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+
 h4 {
   text-align: right;
 }

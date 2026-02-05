@@ -1,4 +1,6 @@
 import { useState } from "react";
+//import Styles
+import "./Form.css";
 export default function Form() {
   const emptyFormState = { title: "", description: "", author: "" };
   // this holds the current state of the controlled form
@@ -17,7 +19,7 @@ export default function Form() {
     setFormData(emptyFormState);
   };
   const storeFanMail = async () => {
-    const response = await fetch("/api/add-fan-mail", {
+    const response = await fetch("/api/add-one-memory", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,6 +30,8 @@ export default function Form() {
         author: formData.author,
       }),
     });
+    const data = response.json();
+    console.log(data);
   };
   return (
     <>
