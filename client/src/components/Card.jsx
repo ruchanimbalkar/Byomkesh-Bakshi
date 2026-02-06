@@ -6,7 +6,7 @@ export default function Card(props) {
         {" "}
         Season {props.episode.season} | Episode {props.episode.episodeNo}{" "}
       </h3>
-      <h4>{props.episode.episodeTitle}</h4>
+      <h4 className="episode-title">{props.episode.episodeTitle}</h4>
       {props.children}
       <p>{descriptionP}</p>
     </>

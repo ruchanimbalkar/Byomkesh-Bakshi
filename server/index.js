@@ -30,6 +30,7 @@ app.get("/letters", async (request, response, next) => {
 
 //Add-one-memory
 app.post("/letters", async (req, res, next) => {
+  console.log(req.body);
   const { title, body, author } = req.body;
   console.log(title, body, author);
   try {
