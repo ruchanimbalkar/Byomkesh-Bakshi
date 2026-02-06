@@ -1,7 +1,24 @@
+// ---------------------------------
+// Boilerplate Code to Set Up Server
+// ---------------------------------
 import express from "express";
 import db from "./connection.js";
 
 const app = express();
+
+app.use(express.json());
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
+
+app.get("/", (req, res) => {
+  res.send("Hi, Server is ON!");
+});
+
+// ---------------------------------
+// API endpoints
+// ---------------------------------
 
 //Get all episodes
 app.get("/episodes", async (request, response, next) => {
@@ -30,9 +47,10 @@ app.get("/letters", async (request, response, next) => {
 
 //Add-one-memory
 app.post("/letters", async (req, res, next) => {
-  console.log("req", req);
-  console.log("req.body", req.body);
-  const { title, body, author } = req.body;
+  // console.log("req", req);
+  const reqBody = await req.body;
+  console.log("req.body", reqBody);
+  const { title, body, author } = await req.body;
   console.log(title, body, author);
   try {
     if (!title || !body || !author) {
@@ -53,6 +71,7 @@ app.post("/letters", async (req, res, next) => {
   } catch (error) {
     next(error);
   }
+  res.send("Dummy response!");
 });
 
 // Global error handler
@@ -63,12 +82,4 @@ app.use((err, req, res, next) => {
       message: err.message || "Internal Server Error",
     },
   });
-});
-
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
-});
-
-app.get("/", (req, res) => {
-  res.send("Hi, Server is ON!");
 });
