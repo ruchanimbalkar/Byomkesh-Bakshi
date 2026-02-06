@@ -25,7 +25,7 @@ export default function Form() {
     setMessage("We have received your message.");
   };
   const storeFanMail = async () => {
-    const response = await fetch("/api/add-one-memory", {
+    const response = await fetch("/api/letters", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
