@@ -48,12 +48,18 @@ export default function Form() {
           name="title"
           value={formData.title}
           onChange={handleInputChange}
-          placeholder="Letter Title"
+          placeholder="Post Title"
           required
         ></input>
+        <label for="memory">
+          Please share with us your memory of this show :{" "}
+        </label>
         <textarea
           type="text"
+          id="memory"
           name="body"
+          rows="5"
+          cols="33"
           value={formData.body}
           onChange={handleInputChange}
           placeholder="Share your memory"

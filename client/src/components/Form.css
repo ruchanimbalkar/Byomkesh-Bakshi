@@ -8,6 +8,7 @@ form {
 form button {
   border-radius: 0.2rem;
 }
+textarea,
 input {
   display: block;
   margin: 1rem;
