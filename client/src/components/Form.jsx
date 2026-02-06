@@ -2,9 +2,15 @@ import { useState } from "react";
 //import Styles
 import "./Form.css";
 export default function Form() {
-  const emptyFormState = { title: "", description: "", author: "" };
+  const [message, setMessage] = useState("");
+  const emptyFormState = { title: "", body: "", author: "" };
   // this holds the current state of the controlled form
   const [formData, setFormData] = useState(emptyFormState);
+
+  const handleClick = () => {
+    setFormData(emptyFormState);
+    setMessage("");
+  };
   // Update the state when input values change
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -14,9 +20,9 @@ export default function Form() {
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    console.log("formData", formData);
     storeFanMail();
-    setFormData(emptyFormState);
+    setMessage("We have received your message.");
   };
   const storeFanMail = async () => {
     const response = await fetch("/api/add-one-memory", {
@@ -26,7 +32,7 @@ export default function Form() {
       },
       body: JSON.stringify({
         title: formData.title,
-        body: formData.description,
+        body: formData.body,
         author: formData.author,
       }),
     });
@@ -47,8 +53,8 @@ export default function Form() {
         ></input>
         <textarea
           type="text"
-          name="description"
-          value={formData.description}
+          name="body"
+          value={formData.body}
           onChange={handleInputChange}
           placeholder="Share your memory"
           required
@@ -62,6 +68,12 @@ export default function Form() {
           required
         ></input>
         <button type="submit">Submit</button>
+        {message && (
+          <button onClick={handleClick} type="button">
+            Reset form
+          </button>
+        )}
+        <p>{message}</p>
       </form>
     </>
   );

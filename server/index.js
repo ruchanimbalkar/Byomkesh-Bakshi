@@ -31,10 +31,12 @@ app.get("/letters", async (request, response, next) => {
 //Add-one-memory
 app.post("/add-one-memory", async (req, res, next) => {
   const { title, body, author } = req.body;
+  console.log(title, body, author);
   try {
     if (!title || !body || !author) {
       return res.status(400).send("Error : Missing required fields!");
     } else {
+      console.log(title, body, author);
       let collection = await db.collection("letters");
       const results = await collection.insertOne({
         title: title,
