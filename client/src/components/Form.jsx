@@ -7,6 +7,8 @@ export default function Form() {
   // this holds the current state of the controlled form
   const [formData, setFormData] = useState(emptyFormState);
 
+  const envelopeSpan = <span>&#128233;</span>;
+
   const handleClick = () => {
     setFormData(emptyFormState);
     setMessage("");
@@ -39,6 +41,7 @@ export default function Form() {
     const data = response.json();
     console.log(data);
   };
+
   return (
     <>
       <form onSubmit={handleSubmit} name="fan-mail">
@@ -75,11 +78,15 @@ export default function Form() {
         ></input>
         <button type="submit">Submit</button>
         {message && (
-          <button onClick={handleClick} type="button">
-            Reset form
-          </button>
+          <>
+            <button onClick={handleClick} type="button">
+              Reset form
+            </button>
+            <p>
+              {message} {envelopeSpan}
+            </p>
+          </>
         )}
-        <p>{message}</p>
       </form>
     </>
   );
