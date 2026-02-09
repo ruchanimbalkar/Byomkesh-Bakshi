@@ -49,7 +49,8 @@ This is a full stack app.
 These are the API endpoints I built:
 
 1. GET /episodes Retrieves all episodes
-2. Coming soon
+2. GET /letters Retrieves letters written to Mr. Bakshi
+3. POST /letters Posts letters
 
 ## 🗄️ Database Schema
 
@@ -67,3 +68,4 @@ MongoDB
 
 1. Add Log in Button
 2. Add button to add or update description
+3. Favorite an episode /Save to favorites
