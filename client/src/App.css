@@ -20,3 +20,8 @@ figcaption {
 .episode-title {
   text-align: center;
 }
+
+.popover-button {
+  font-weight: bold;
+  border-radius: 0.3rem;
+}

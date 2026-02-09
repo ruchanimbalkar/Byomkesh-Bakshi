@@ -52,7 +52,7 @@ export default function MemoryLane() {
         commandfor="letter-popover"
         command="toggle-popover"
       >
-        Share your memory
+        Share your memory &#128394;
       </button>
       {popover}
     </>

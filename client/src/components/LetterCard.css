@@ -2,12 +2,21 @@
   font-family: "Vollkorn", serif;
   font-style: italic;
   background-color: grey;
-  border: 0.4rem double darkgray;
-  border-radius: 0.7rem;
+  border-width: 0.4rem;
+  border-color: darkgray;
+  border-style: ridge double solid groove;
+  border-radius: 0.1rem 0.1rem 2.5rem 0.2rem;
   padding: 1rem;
   margin: 1rem;
 }
 
-h4 {
+.letter-title {
+  text-align: left;
+}
+
+.body {
+  text-align: left;
+}
+.author {
   text-align: right;
 }
