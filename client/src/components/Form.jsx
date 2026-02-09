@@ -42,7 +42,7 @@ export default function Form() {
   return (
     <>
       <form onSubmit={handleSubmit} name="fan-mail">
-        <h2> &#9997; Share your memories of this show :</h2>
+        <h2> &#9997; Share your memories with Mr. Bakshi :</h2>
         <input
           type="text"
           name="title"
