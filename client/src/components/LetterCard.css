@@ -10,13 +10,13 @@
   margin: 1rem;
 }
 
-.letter-title {
-  text-align: left;
-}
-
+.greeting,
+.subject,
 .body {
   text-align: left;
 }
-.author {
+
+.sign-off {
+  font-weight: bold;
   text-align: right;
 }

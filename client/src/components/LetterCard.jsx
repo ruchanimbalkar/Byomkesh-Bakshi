@@ -3,9 +3,18 @@ export default function LetterCard({ letter }) {
   return (
     <>
       <div className="letter-card">
-        <h3 className="letter-title">{letter.title}</h3>
+        <h3 className="greeting">Hello, Mr. Bakshi!</h3>
+
+        <p className="subject">Subject : {letter.title}</p>
+
         <p className="body">{letter.body}</p>
-        <h4 className="author">-{letter.author}</h4>
+
+        <p className="sign-off">
+          Thank you,
+          <br></br>
+          {letter.author}.
+        </p>
+        <hr></hr>
       </div>
     </>
   );
