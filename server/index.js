@@ -23,7 +23,11 @@ app.get("/", (req, res) => {
 //Get all episodes
 app.get("/episodes", async (request, response, next) => {
   try {
-    const results = await db.collection("episodes").find({}).toArray();
+    const results = await db
+      .collection("episodes")
+      .find({})
+      .sort({ episodeNo: 1 })
+      .toArray();
     // console.log("results : ", results);
     response.status(200).json(results);
   } catch (error) {
